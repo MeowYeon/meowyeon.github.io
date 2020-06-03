@@ -1,94 +1,157 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html><head>
 	<meta name="generator" content="Hugo 0.67.0" />
-    <title>Title</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="https://meowyeon.github.io/assets/css/main.css"/>
-    <noscript><link rel="stylesheet" href="https://meowyeon.github.io/assets/css/noscript.css"/></noscript>
-    <style>
-        :root{--site-background : url("https://meowyeon.github.io/images/bg.jpg")};
-    </style> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="developer for distribute system">
+    <meta name="Author" content="yeon.guo">
+    <meta name="keywords" content="hugo blog">
+    <link rel="stylesheet" href=https://meowyeon.github.io/css/syntax.css>
+    <link rel="stylesheet" href=https://meowyeon.github.io/css/style.css>
+    <script src="https://kit.fontawesome.com/1b7478c139.js" crossorigin="anonymous"></script>
+    <title>yeon.guo&#39;s site</title>
+  </head><body><aside id="sidenav">
+    <header>
     
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-</head>
-
-<body class="is-preload">
-
+        <a href=https://meowyeon.github.io/><img src="https://meowyeon.github.io/images/sakura.jpg" alt="avatar"></a>
+        
     
-        <div id="wrapper">
 
-            
-                <header id="header">
-                    <div class="logo">
-                        <a href="/"><span class="icon fa-gem"></span></a>
-                    </div>
-                    <div class="content">
-                        <div class="inner">
-                            <h1>海鹏的blog</h1>
-                            
-                        </div>
-                    </div>
-                    <nav>
-                        <ul>
-                            
-                                
-                                    
-                                        <li><a href="https://meowyeon.github.io/post/">Posts</a></li>
-                                    
-                                
-                            
-                                
-                                    
-                                        <li><a href="#about">About</a></li>
-                                    
-                                
-                            
-                        </ul>
-                    </nav>
-                </header>
+    <a id="branding" href=https://meowyeon.github.io/>
+        
+            yeon.guo&#39;s site
+        
+    </a>
+    </header>
 
-            
-                <div id="main">
-
-                    
-                        
-                            
-                                <article id="about">
-                                    <h2 class="major">About</h2>
-                                    <span class="image main"><img src="" alt="" /></span>
-                                    <!-- raw HTML omitted -->
-
-                                </article>
-                            
-                        
-                    
-                        
-                            
-                        
-                    
-
-                </div>
-
+    <nav>
+        
+            		
+            <a href="/"
                 
-<footer id="footer">
-    <p class="copyright">&copy; Design: <a href="https://github.com/d-asnaghi">d-asnaghi</a> and <a href="https://html5up.net">HTML5 UP</a>.</p>
-</footer>
-
+            >
+                <i class="fas fa-home fa-sm"></i>
+                <span>home</span>
+            </a>
+        
+            		
+            <a href="/blog/"
+                
+            >
+                <i class="fas fa-keyboard fa-ms"></i>
+                <span>blog</span>
+            </a>
+        
+            		
+            <a href="/tags"
+                
+            >
+                <i class="fas fa-tags fa-ms"></i>
+                <span>tags</span>
+            </a>
+        
+            		
+            <a href="https://github.com/meowyeon"
+                
+                    target="_blank"
+                
+            >
+                <i class="fab fa-github fa-ms"></i>
+                <span>github</span>
+            </a>
+        
+            		
+            <a href="/contact"
+                
+            >
+                <i class="far fa-envelope"></i>
+                <span>contact</span>
+            </a>
+        
+    </nav>
+</aside>
+<main id="main">
+            <a href="javascript:void(0)" id="closebtn" onclick="navToggle()"><i class="fas fa-bars fa-lg"></i></a>
+            <div class="content">
+    
+    
+    <div class="section"> 
+        <div class="section-title">recent</div> 
+        
+        
+            <div class="list-item">
+                <a class="entry-title" href="/post/go-mod/">Go Mod初识</a>
+                
+                
+                <div class="meta">
+                
+                    <i class="far fa-calendar-alt"></i> Jun 3 2020
+                
+                <br>
+                
+                </div>
+            </div>
+        
         </div>
+    
 
     
-    <div id="bg"></div>
+    <div class="section"> 
+        <div class="section-title">μblog</div> 
+        <div class="posts">
+             
+            
+                <div class="post">
+                    
+                    <div class="post-content">
+                        <h2 id="go-mod-初识">go mod 初识</h2>
+<p>go mod为go官方推出的包管理工具，这里简单整理其使用</p>
+<h2 id="包管理工具">包管理工具</h2>
+<p>go mod之前依赖GOPATH, GOROOT, vendor进行编译
+go mod之后可以跳出GOPATH依赖</p>
+<p>以往包管理工具多依赖vendor进行设计，go mod依赖包版本信息，默认使用最新的tag版本，如果没有tag版本则使用最新commit生成版本信息</p>
+<h2 id="使用go-mod">使用go mod</h2>
+<p>需要打开GO111MODULE: on, off, auto(当前目录不在GOPATH中并且有go.mod文件，才会使用go mod)
+go mod拉取的包默认保存在GOPATH/pkg/mod目录下</p>
+<p>使用go mod init生成go.mod文件
+使用go build编译当前工程，会在go.mod文件中生成依赖信息</p>
+<p>go mod可以生成版本相关的依赖信息，这样当其他人fetch你的工程编译时，可以保证使用相同的依赖进行编译，防止出现兼容问题
+go mod默认使用当前目录的go.mod，如果没有发现，则依次向父目录寻找</p>
+<h3 id="实践">实践</h3>
+<p>当需要指定版本时，可以使用<code>go mod -require=module@version</code>指定版本，执行后会更新go.mod文件中依赖信息</p>
+<p>由于MVS存在，当工程需要同时依赖两个major版本module时，可以使用类似module/v2的模块名称，go build时会自动拉取指定major版本最新版本进行编译，同时不会破坏历史依赖信息</p>
+<p>可以使用go mod -vendor生成vendor以兼容历史</p>
+<h2 id="参考链接">参考链接</h2>
+<p><a href="https://tonybai.com/2018/07/15/hello-go-module/">初窥Go module</a></p>
 
-</body>
-
-
+                    </div>
+                    <div class="meta post-footer"> <span>Jun 3 2020 09:49 UTC&#43;08</span> <a href="/post/go-mod/"><i class="fas fa-link"></i> link</a></div> 
+                </div>
+             
+        </div>
+    </div>
     
-    <script src=https://meowyeon.github.io/assets/js/jquery.min.js></script>
-    <script src=https://meowyeon.github.io/assets/js/browser.min.js></script>
-    <script src=https://meowyeon.github.io/assets/js/breakpoints.min.js></script>
-    <script src=https://meowyeon.github.io/assets/js/util.js></script>
-    <script src=https://meowyeon.github.io/assets/js/main.js></script>
 
+            </div><footer>
+<div class="footer-content">
+
+  <div class="contact-info">
+      
+          <div class="footer-mail">
+          <i class="far fa-envelope"></i> <a href="mailto:meowyeon@163.com">meowyeon@163.com</a> </div>
+      
+      
+      <div class="footer-phone">
+          <i class="fas fa-phone"></i> 888888888 
+      </div>
+      
+  </div>
+
+
+<p class="copyright meta">Copyright © 2008–2019, Steve Francia and the Hugo Authors; all rights reserved.</p>
+
+</div>
+</footer></main>
+    </body>
+    <script src=https://meowyeon.github.io/js/navbutton.js></script>
 </html>
