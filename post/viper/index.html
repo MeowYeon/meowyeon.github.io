@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html><head>
-	<meta name="generator" content="Hugo 0.67.0" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="developer for distribute system">
@@ -74,50 +73,27 @@
             <a href="javascript:void(0)" id="closebtn" onclick="navToggle()"><i class="fas fa-bars fa-lg"></i></a>
             <div class="content">
     
+    <h1 id="title">Viper 初识</h1>
     
-    <div class="section"> 
-        <div class="section-title">recent</div> 
-        
-        
-            <div class="list-item">
-                <a class="entry-title" href="/post/viper/">Viper 初识</a>
-                
-                
-                <div class="meta">
-                
-                    <i class="far fa-calendar-alt"></i> Jun 5 2020
-                
-                <br>
-                
-                </div>
-            </div>
-        
-            <div class="list-item">
-                <a class="entry-title" href="/post/go-mod/">Go Mod初识</a>
-                
-                
-                <div class="meta">
-                
-                    <i class="far fa-calendar-alt"></i> Jun 3 2020
-                
-                <br>
-                
-                </div>
-            </div>
-        
-        </div>
-    
-
-    
-    <div class="section"> 
-        <div class="section-title">μblog</div> 
-        <div class="posts">
-             
-            
-                <div class="post">
-                    
-                    <div class="post-content">
-                        <h2 id="viper初识">Viper初识</h2>
+      
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#viper初识">Viper初识</a>
+      <ul>
+        <li><a href="#setget">Set/Get</a></li>
+        <li><a href="#命令行参数">命令行参数</a></li>
+        <li><a href="#环境变量">环境变量</a></li>
+        <li><a href="#readwrite">Read/Write</a></li>
+        <li><a href="#remote-keyvalue">Remote Key/Value</a></li>
+        <li><a href="#默认值">默认值</a></li>
+        <li><a href="#优先级顺序">优先级顺序</a></li>
+        <li><a href="#其他功能">其他功能</a></li>
+      </ul>
+    </li>
+    <li><a href="#参考链接">参考链接</a></li>
+  </ul>
+</nav>
+    <h2 id="viper初识">Viper初识</h2>
 <p>Viper是Golang配置解决方案，可以Cobra(Golang命令行解决方案)配合使用。
 直观感觉Viper里面是一个map[string]interface{}结构存储左右的配置项，使用mapstructure将map转struct。</p>
 <h3 id="setget">Set/Get</h3>
@@ -192,37 +168,18 @@
 <h2 id="参考链接">参考链接</h2>
 <p><a href="https://www.liwenzhou.com/posts/Go/viper_tutorial/">Go语言配置管理神器——Viper中文教程</a></p>
 
-                    </div>
-                    <div class="meta post-footer"> <span>Jun 5 2020 09:46 UTC&#43;08</span> <a href="/post/viper/"><i class="fas fa-link"></i> link</a></div> 
-                </div>
+    
+    <div class="nav-next-prev">
+        <div class="nav-prev">
             
-                <div class="post">
-                    
-                    <div class="post-content">
-                        <h2 id="go-mod-初识">go mod 初识</h2>
-<p>go mod为go官方推出的包管理工具，这里简单整理其使用</p>
-<h2 id="包管理工具">包管理工具</h2>
-<p>go mod之前依赖GOPATH, GOROOT, vendor进行编译
-go mod之后可以跳出GOPATH依赖</p>
-<p>以往包管理工具多依赖vendor进行设计，go mod依赖包版本信息，默认使用最新的tag版本，如果没有tag版本则使用最新commit生成版本信息</p>
-<h2 id="使用go-mod">使用go mod</h2>
-<p>需要打开GO111MODULE: on, off, auto(当前目录不在GOPATH中并且有go.mod文件，才会使用go mod)
-go mod拉取的包默认保存在GOPATH/pkg/mod目录下</p>
-<p>使用go mod init生成go.mod文件
-使用go build编译当前工程，会在go.mod文件中生成依赖信息</p>
-<p>go mod可以生成版本相关的依赖信息，这样当其他人fetch你的工程编译时，可以保证使用相同的依赖进行编译，防止出现兼容问题
-go mod默认使用当前目录的go.mod，如果没有发现，则依次向父目录寻找</p>
-<h3 id="实践">实践</h3>
-<p>当需要指定版本时，可以使用<code>go mod -require=module@version</code>指定版本，执行后会更新go.mod文件中依赖信息</p>
-<p>由于MVS存在，当工程需要同时依赖两个major版本module时，可以使用类似module/v2的模块名称，go build时会自动拉取指定major版本最新版本进行编译，同时不会破坏历史依赖信息</p>
-<p>可以使用go mod -vendor生成vendor以兼容历史</p>
-<h2 id="参考链接">参考链接</h2>
-<p><a href="https://tonybai.com/2018/07/15/hello-go-module/">初窥Go module</a></p>
-
-                    </div>
-                    <div class="meta post-footer"> <span>Jun 3 2020 09:49 UTC&#43;08</span> <a href="/post/go-mod/"><i class="fas fa-link"></i> link</a></div> 
-                </div>
-             
+                <a href="https://meowyeon.github.io/post/go-mod/"><i class="fas fa-chevron-left"></i></a>
+            
+        </div>
+        <a class="nav-top" href="#">top</i></a>
+        <div class="nav-next">
+            
+                <a class="grayed-out" href="javascript:void()"><i class="fas fa-chevron-right"></i></a>
+            
         </div>
     </div>
     
